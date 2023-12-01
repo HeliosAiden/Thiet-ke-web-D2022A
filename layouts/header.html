@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="../style.css" />
+<div class="main">
+  <div class="container head flex">
+    <a href="#"
+      ><img
+        src="public\images\avatar_1.jpg"
+        style="width: 65px"
+        class="circle right margin hide-large hover-opacity"
+    /></a>
+    <span
+      class="button hide-large xxlarge hover-text-grey"
+      onclick="openSideBar()"
+      ><i class="fa fa-bars"></i
+    ></span>
+    <div class="container">
+      <h1>Main Header</h1>
+      <div class="section bottombar padding-16">
+        <span class="margin-right">Filter:</span>
+        <button class="button black">ALL</button>
+        <button class="button white">
+          <i class="fa fa-diamond margin-right"></i>Design
+        </button>
+        <button class="button white hide-small">
+          <i class="fa fa-photo margin-right"></i>Photos
+        </button>
+        <button class="button white hide-small">
+          <i class="fa fa-map-pin margin-right"></i>Art
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  const openSideBar = () => {
+    document.getElementById("mySidebar").style.display = "block";
+  };
+</script>
