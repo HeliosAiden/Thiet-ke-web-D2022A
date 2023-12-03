@@ -61,7 +61,6 @@ export const injectTagHTML = ( tag, src='', style='', className='', ) => {
   const element = document.createElement(`${tag}`);
   if (!element) return;
   document.body.appendChild(element)
-  console.log(`${concatURL(src)}`)
   if (src) {
     element.src = `${concatURL(src)}`
   }

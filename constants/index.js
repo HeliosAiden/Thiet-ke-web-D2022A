@@ -15,7 +15,14 @@ export const HTMLElements = [
     },
     {
       id: "header",
-      path: "layouts/header.html"
+      path: "layouts/header.html",
+      images: [
+        {
+          src: 'public/images/avatar_1.jpg',
+          alt: 'avatar-1',
+          style: "width: 65px",
+        }
+      ],
     },
 ];
 
