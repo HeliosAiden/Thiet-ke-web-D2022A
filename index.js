@@ -1,7 +1,7 @@
-import { HTMLElements } from "../constants/index.js";
+import { HomeElements } from "./constants/index.js";
 import { injectHTML } from "./utils/InjectElements.js";
 
-HTMLElements.map((element) => {
+HomeElements.map((element) => {
   const div = document.createElement("div");
   div.id = element.id;
   document.body.appendChild(div);

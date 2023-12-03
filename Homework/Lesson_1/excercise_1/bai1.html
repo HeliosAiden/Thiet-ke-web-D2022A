@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bai 1</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .tab {
+        float: left;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+        width: 20%;
+        height: 100vh;
+      }
+      .tab button {
+        display: block;
+        background-color: inherit;
+        color: black;
+        padding: 22px 16px;
+        width: 100%;
+        border: none;
+        outline: none;
+        text-align: left;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      .tab button:hover {
+        background-color: #ddd;
+      }
+      .tab button.active {
+        background-color: #ccc;
+      }
+      .tabcontent {
+        float: left;
+        padding: 0px 12px;
+        border: 1px solid #ccc;
+        width: 80%;
+        border-left: none;
+        height: 100vh;
+        display: none;
+      }
+      .defaultOpen {
+        display: block;
+      }
+      code {
+        font-family: Consolas, "courier new";
+        color: green;
+        background-color: #f1f1f1;
+        padding: 2px;
+        font-size: 105%;
+      }
+      .example-aria {
+        padding: 16px 24px;
+        box-shadow: none !important;
+        background-color: rgb(231,233,235);
+
+      }
+      .example-aria > button {
+        background-color: rgb(232, 193, 135);
+        color: black;
+        padding: 12px 16px;
+        margin: 0px 12px 12px 0px;
+        min-width: 64px;
+        border: none;
+        outline: none;
+        text-align: left;
+        cursor: pointer;
+        transition: 0.3s;
+        font-size: large;
+      }
+      .example-aria > button:hover {
+        background-color: rgb(214, 169, 102);
+        color: whitesmoke;
+      }
+      .example-aria > button.active {
+        background-color: green;
+        color: white;
+      }
+      .example-container {
+        background-color: whitesmoke;
+        padding: 20px 20px;
+      }
+      .spancolor {
+        color: blue;
+      }
+      .tagnamecolor {
+        color: green;
+      }
+      .display-code {
+        display: block;
+      }
+      .display-result {
+        display: none;
+      }
+      .spacespan {
+        display: inline-block;
+        width: 0.3rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tab">
+      <button class="tablinks active" onclick="openTab(event, 'basic')">
+        Cấu trúc trang web
+      </button>
+      <button class="tablinks" onclick="openTab(event, 'heading')">
+        Thẻ heading
+      </button>
+      <button class="tablinks" onclick="openTab(event, 'a')">
+        Thẻ a
+      </button>
+      <button class="tablinks" onclick="openTab(event, 'p')">
+        Thẻ p
+      </button>
+    </div>
+    <div id="basic" class="tabcontent defaultOpen">
+      <h2>Cấu trúc trang web</h2>
+      <h3>Ví dụ</h3>
+      <div class="example-aria">
+        <button class="example-button code active" onclick="openExample(event, 'display-code', 'display-result')">
+            Code
+        </button>
+        <button class="example-button result" onclick="openExample(event, 'display-result', 'display-code')">
+            Kết quả
+        </button>
+        <div class="example-container">
+          <div class="display-code" >
+            <p>
+              <span class="spancolor head"></span>
+              <span class="tagnamecolor">!DOCTYPE</span>
+              <span class="spacespan 1"></span>
+              <span class="tagnamecolor">html</span>
+              <span class="spancolor">></span>
+            </p>
+            <p>
+              <span class="spacespan 4"></span>
+              <span class="spancolor head"></span>
+              <span class="tagnamecolor">html</span>
+              <span class="spancolor tail"></span>
+            </p>
+            <p>
+              <span class="spacespan 8"></span>
+              <span class="spancolor head"></span>
+              <span class="tagnamecolor">head</span>
+              <span class="spancolor tail"></span>
+            </p>
+            <p>
+              <span class="spacespan 12"></span>
+              <span class="spancolor head"></span>
+              <span class="tagnamecolor">title</span>
+              <span class="spancolor tail"></span>
+              <span class="spancolor child">
+                Tiêu đề trang web để dây
+              </span>
+              <span class="spancolor head"></span>
+              <span class="spancolor">/</span>
+              <span class="tagnamecolor">title</span>
+              <span class="spancolor tail"></span>
+            </p>
+            <p>
+              <span class="spacespan 8"></span>
+              <span class="spancolor head"></span>
+              <span class="spancolor">/</span>
+              <span class="tagnamecolor">head</span>
+              <span class="spancolor tail"></span>
+            </p>
+            <p>
+              <span class="spacespan 8"></span>
+              <span class="spancolor head"></span>
+              <span class="tagnamecolor">body</span>
+              <span class="spancolor tail"></span>
+            </p>
+            <p>
+              <span class="spacespan 12"></span>
+              <span class="spancolor head"></span>
+              <span class="tagnamecolor">!--Chèn các thẻ ở đây ví dụ thẻ h1 và thẻ p ở dưới--</span>
+              <span class="spancolor tail"></span>
+            </p>
+            <p>
+              <span class="spacespan 12"></span>
+              <span class="spancolor head"></span>
+              <span class="tagnamecolor">h1</span>
+              <span class="spancolor tail"></span>
+              <span class="spancolor child">
+                This is a Heading
+              </span>
+              <span class="spancolor head"></span>
+              <span class="spancolor">/</span>
+              <span class="tagnamecolor">h1</span>
+              <span class="spancolor tail"></span>
+            </p>
+            <p>
+              <span class="spacespan 12"></span>
+              <span class="spancolor head"></span>
+              <span class="tagnamecolor">p</span>
+              <span class="spancolor tail"></span>
+              <span class="spancolor child">
+                This is a paragraph
+              </span>
+              <span class="spancolor head"></span>
+              <span class="spancolor">/</span>
+              <span class="tagnamecolor">p</span>
+              <span class="spancolor tail"></span>
+            </p>
+            <p>
+              <span class="spacespan 8"></span>
+              <span class="spancolor head"></span>
+              <span class="spancolor">/</span>
+              <span class="tagnamecolor">body</span>
+              <span class="spancolor tail"></span>
+            </p>
+            <p>
+              <span class="spacespan 4"></span>
+              <span class="spancolor head"></span>
+              <span class="spancolor">/</span>
+              <span class="tagnamecolor">html</span>
+              <span class="spancolor tail"></span>
+            </p>
+
+
+          </div>
+          <div class="display-result" >
+            <!DOCTYPEhtml>
+              <html>
+                <head>
+                  <title>Tiêu đềtrang web đểởđây</title>
+                </head>
+              <body><!--Chèn các thẻởđây ví dụthẻh1 và thẻp ởdưới-->
+                <h1>This is a Heading</h1>
+                <p>This is a paragraph.</p>
+              </body>
+            </html>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="heading" class="tabcontent">
+      <h2>Thẻ heading</h2>
+      <p>
+        Thẻ heading dùng là tiêu đề hoặc phụ đề muốn hiển thị trên trang web. Lưu ý chỉ sử dụng tiêu đề HTML cho các tiêu đề. Không sử dụng tiêu đề để làm cho văn bản Lớn hoặc in đậm
+      </p>
+      <p>
+        Các tiêu đề được xác định bằng thẻ <code>h1</code> đến <code>h6</code>
+      </p>
+      <p>
+        Thẻ <code>h1</code> có ý nghĩa và cỡ chữ lớn nhất, sau đó là thẻ <code>h2</code> và sau cùng là thẻ <code>h6</code>
+      </p>
+      <h3>Ví dụ</h3>
+      <div class="example-aria active">
+        <button class="example-button code active" onclick="openExample(event, 'display-code', 'display-result')">
+            Code
+        </button>
+        <button class="example-button result" onclick="openExample(event, 'display-result', 'display-code')">
+            Kết quả
+        </button>
+        <div class="example-container">
+          <div class="display-code" >
+            <p>
+              <span class="spancolor head"></span>
+              <span class="tagnamecolor">h1</span>
+              <span class="spancolor tail"></span>
+              <span class="spancolor child">Tiêu đề h1</span>
+              <span class="spancolor head"></span>
+              <span class="spancolor">/</span>
+              <span class="tagnamecolor">h1</span>
+              <span class="spancolor tail"></span>
+            </p>
+            <p>
+              <span class="spancolor head"></span>
+              <span class="tagnamecolor">h2</span>
+              <span class="spancolor tail"></span>
+              <span class="spancolor child">Tiêu đề h2</span>
+              <span class="spancolor head"></span>
+              <span class="spancolor">/</span>
+              <span class="tagnamecolor">h2</span>
+              <span class="spancolor tail"></span>
+            </p>
+            <p>
+              <span class="spancolor head"></span>
+              <span class="tagnamecolor">h3</span>
+              <span class="spancolor tail"></span>
+              <span class="spancolor child">Tiêu đề h3</span>
+              <span class="spancolor head"></span>
+              <span class="spancolor">/</span>
+              <span class="tagnamecolor">h3</span>
+              <span class="spancolor tail"></span>
+            </p>
+            <p>
+              <span class="spancolor head"></span>
+              <span class="tagnamecolor">h4</span>
+              <span class="spancolor tail"></span>
+              <span class="spancolor child">Tiêu đề h4</span>
+              <span class="spancolor head"></span>
+              <span class="spancolor">/</span>
+              <span class="tagnamecolor">h4</span>
+              <span class="spancolor tail"></span>
+            </p>
+            <p>
+              <span class="spancolor head"></span>
+              <span class="tagnamecolor">h5</span>
+              <span class="spancolor tail"></span>
+              <span class="spancolor child">Tiêu đề h5</span>
+              <span class="spancolor head"></span>
+              <span class="spancolor">/</span>
+              <span class="tagnamecolor">h5</span>
+              <span class="spancolor tail"></span>
+            </p>
+            <p>
+              <span class="spancolor head"></span>
+              <span class="tagnamecolor">h6</span>
+              <span class="spancolor tail"></span>
+              <span class="spancolor child">Tiêu đề h6</span>
+              <span class="spancolor head"></span>
+              <span class="spancolor">/</span>
+              <span class="tagnamecolor">h6</span>
+              <span class="spancolor tail"></span>
+            </p>
+          </div>
+          <div class="display-result" >
+            <h1>Tiêu đề h1</h1>
+            <h2>Tiêu đề h2</h2>
+            <h3>Tiêu đề h3</h3>
+            <h4>Tiêu đề h4</h4>
+            <h5>Tiêu đề h5</h5>
+            <h6>Tiêu đề h6</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div id="a" class="tabcontent">
+      <h2>Thẻ a</h2>
+      <p>
+        Thẻ <code>a</code> được sử dụng để đánh dấu một liên kết từ trang này
+        sang trang khác.
+      </p>
+      <p>
+        Thuộc tính quan trọng nhất của thẻ <code>a</code> là thuộc tính href cho
+        biết đích đến của liên kết.
+      </p>
+      <p>
+        Nếu thẻ <code>a</code> không có thuộc tính href thì nó chỉ mang vai trò
+        đánh dấu.
+      </p>
+
+      <h3>Ví dụ</h3>
+      <div class="example-aria active">
+        <button class="example-button code active" onclick="openExample(event, 'display-code', 'display-result')">
+            Code
+        </button>
+        <button class="example-button result" onclick="openExample(event, 'display-result', 'display-code')">
+            Kết quả
+        </button>
+        <div class="example-container">
+          <div class="display-code" >
+            <p>
+              <span class="spancolor head"></span>
+              <span class="tagnamecolor">a</span>
+              <span class ="spacespan"></span>
+                href="https://www.youtube.com/"
+              <span class="spancolor">></span>
+              <span class="spancolor child">
+                Bấm vào sẽ nhảy sang trang youtube!
+              </span>
+              <span class="spancolor head"></span>
+              <span class="spancolor">/</span>
+              <span class="tagnamecolor">a</span>
+              <span class="spancolor tail"></span>
+            </p>
+          </div>
+          <div class="display-result" >
+            <a href="https://www.youtube.com/">Bấm vào sẽ nhảy sang trang youtube!</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="p" class="tabcontent">
+    <h2>Thẻ <code>p</code></h2>
+    <p>Dùng để mô tả đoạn văn bản trên web</p>
+    <p>Chỉ khi muốn chèn đoạn khác mới sử dụng thẻ <code>p</code>, nếu vẫn trong một đoạn mà muốn xuống dòng thì dùng thẻ <code>br</code></p>
+    <h3>Ví dụ</h3>
+    <div class="example-aria active">
+      <button class="example-button code active" onclick="openExample(event, 'display-code', 'display-result')">
+          Code
+      </button>
+      <button class="example-button result" onclick="openExample(event, 'display-result', 'display-code')">
+          Kết quả
+      </button>
+      <div class="example-container">
+        <div class="display-code" >
+          <p>
+            <span class="spancolor head"></span>
+            <span class="tagnamecolor">p</span>
+            <span class="spancolor">></span>
+          </p>
+          <p>
+            <span class="spacespan 4"></span>
+            <span class="spancolor child">
+              Hôm qua em đến trường
+            </span>
+            <span class="spacespan 1"></span>
+            <span class="spancolor head"></span>
+            <span class="tagnamecolor">br</span>
+            <span class="spancolor tail"></span>
+          </p>
+          <p>
+            <span class="spacespan 4"></span>
+            <span class="spancolor child">
+              mẹ dắt tay từng bước
+            </span>
+          </p>
+          <p>
+            <span class="spancolor head"></span>
+            <span class="spancolor">/</span>
+            <span class="tagnamecolor">p</span>
+            <span class="spancolor tail"></span>
+
+          </p>
+        </div>
+        <div class="display-result" >
+          <p>
+            Hôm qua em đến trường <br>
+            mẹ dắt tay từng bước
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+    <script>
+      const openTab = (evt, tabName) => {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+      };
+
+      const openExample = (e, i1, i2) => {
+        const a = document.getElementsByClassName(i1);
+        [...a].map(i => i.style.display = 'block')
+        const b = document.getElementsByClassName(i2);
+        [...b].map(i => i.style.display = 'none')
+        const codes = [...document.getElementsByClassName('code')]
+        const results = [...document.getElementsByClassName('result')]
+        const state = e.currentTarget.className.includes('code')
+        if (state) {
+          codes.map(i => i.className.includes('active') ? null : i.className += ' active' )
+          results.map(i => i.className = i.className.replace(' active',''))
+        } else {
+          results.map(i => i.className.includes('active') ? null : i.className += ' active' )
+          codes.map(i => i.className = i.className.replace(' active',''))
+        }
+      }
+
+      const modifyCodeBlock = () => {
+        codeBlocks = document.getElementsByTagName("code");
+        const codeArray = [...codeBlocks];
+        codeArray.map((i) => {
+          const text = i.innerText;
+          const newText = `<${text}>`;
+          i.innerText = newText;
+        });
+      };
+
+      const customizeSpan = () => {
+        const headSpans = document.getElementsByClassName("spancolor head");
+        [...headSpans].map(i =>  i.innerText = '<')
+        const tailSpans = document.getElementsByClassName("spancolor tail");
+        [...tailSpans].map(i => i.innerText = '>')
+        const spaceSpans = document.getElementsByClassName("spacespan");
+        [...spaceSpans].map(i => {
+            for (j=0; j<21; j++) {
+              i.classList.contains(`${j}`) ? i.style.width = `${j * 0.3}rem` : null
+            }
+          }
+        )
+      }
+      customizeSpan()
+      modifyCodeBlock();
+    </script>
+  </body>
+</html>

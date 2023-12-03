@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="../style.css" />
 <div
   class="sidebar bar-block collapse card animate-left"
   style="z-index:3;width: 20%; padding-top: 25px;"
@@ -8,12 +7,14 @@
     <a href="#" onclick="closeSideBar()" class="hide-large right jumbo padding hover-grey" title="close menu">
       <i class="fa fa-remove"></i>
     </a>
-    <img src="public\images\avatar_1.jpg" style="width:45%;" class="round"><br><br>
+    <a href="/">
+      <img id="img-0" class="round" style="width:45%;"><br><br>
+    </a>
     <h4><b>PORTFOLIO</b></h4>
   </div>
-  <a href="#homework" class="bar-item button"><i class="fa fa-fw fa-home"></i> Homeworks</a>
-  <a href="#about" class="bar-item button"><i class="fa fa-fw fa-user"></i> About</a>
-  <a href="#contact" class="bar-item button"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+  <a href="/homework" class="bar-item button"><i class="fa fa-fw fa-home"></i> Homework</a>
+  <a href="/about" class="bar-item button"><i class="fa fa-fw fa-user"></i> About</a>
+  <a href="/contact" class="bar-item button"><i class="fa fa-fw fa-envelope"></i> Contact</a>
 </div>
 <script>
   const closeSideBar = () => {document.getElementById("mySidebar").style.display = "none"};
