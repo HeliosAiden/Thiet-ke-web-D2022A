@@ -1,5 +1,5 @@
-import { HTMLElements } from "/constants/index.js";
-import { injectHTML } from "/utils/InjectElements.js";
+import { HTMLElements } from "./constants/index.js";
+import { injectHTML } from "./utils/InjectElements.js";
 
 HTMLElements.map((element) => {
   const oldDiv = document.querySelector(`#${element.id}`)
