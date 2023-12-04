@@ -1,14 +1,8 @@
-export const rootURL = 'Thiet-ke-web-D2022A';
-
-const concatURL = (path) => {
-  return `${rootURL}/${path}`;
-};
-
 export const injectHTML = (id, path, images = [], style = null) => {
   const element = document.querySelector(`#${id}`);
   if (!element) return;
   try {
-    fetch(`${concatURL(path)}`)
+    fetch(`${path}`)
       .then((res) => res.text())
       .then((data) => {
         element.innerHTML = data;
@@ -19,7 +13,7 @@ export const injectHTML = (id, path, images = [], style = null) => {
             newScript.text = oldScript.text;
           }
           if (oldScript.src) {
-            newScript.src = concatURL(oldScript.src);
+            newScript.src = oldScript.src;
           }
           if (oldScript.type) {
             newScript.type = oldScript.type;
@@ -32,7 +26,7 @@ export const injectHTML = (id, path, images = [], style = null) => {
             const currentIMG = document.getElementById(`img-${index}`);
             const newIMG = document.createElement("img");
             if (currentIMG) {
-              newIMG.src = concatURL(img.src);
+              newIMG.src = img.src;
               newIMG.alt = img.alt;
               newIMG.style = img.style;
               newIMG.id = currentIMG.id;
@@ -62,7 +56,7 @@ export const injectTagHTML = ( tag, src='', style='', className='', ) => {
   if (!element) return;
   document.body.appendChild(element)
   if (src) {
-    element.src = `${concatURL(src)}`
+    element.src = src
   }
   if (className) {
     element.className = className
