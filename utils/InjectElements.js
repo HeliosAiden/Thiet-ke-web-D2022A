@@ -70,5 +70,4 @@ export const injectTagHTML = ( tag, src='', style='', className='', ) => {
   if (style) {
     element.style = style
   }
-
 };
