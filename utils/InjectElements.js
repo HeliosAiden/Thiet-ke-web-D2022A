@@ -1,4 +1,4 @@
-const rootURL = window.location.origin;
+export const rootURL = 'Thiet-ke-web-D2022A';
 
 const concatURL = (path) => {
   return `${rootURL}/${path}`;
