@@ -1,5 +1,5 @@
-import { HomeElements } from 'constants/index.js'
-import { injectHTML } from "utils/InjectElements.js";
+import { HomeElements } from '/constants/index.js'
+import { injectHTML } from "/utils/InjectElements.js";
 
 HomeElements.map(element => {
     const div = document.createElement("div");
