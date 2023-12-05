@@ -52,7 +52,7 @@ export const injectHTML = (id, path, images = [], style = null) => {
   }
 };
 
-export const injectTagHTML = ( tag, src='', style='', className='', ) => {
+export const injectTagHTML = ( tag, src=null, style=null, className=null, link=null ) => {
   const element = document.createElement(`${tag}`);
   if (!element) return;
   document.body.appendChild(element)
@@ -64,5 +64,8 @@ export const injectTagHTML = ( tag, src='', style='', className='', ) => {
   }
   if (style) {
     element.style = style
+  }
+  if (link) {
+    element.src = link
   }
 };

@@ -1,0 +1,20 @@
+h1 {
+    text-align: center;
+    font-weight: 700;
+    text-transform: capitalize;
+    text-shadow: 1px;
+    color: yellowgreen;
+    border: 2px solid black;
+    padding: 10px 0px;
+  }
+  h2 {
+    text-align: center;
+    font-weight: 500;
+  }
+  h3 {
+    color: cadetblue;
+    font-style: italic;
+  }
+  .subheading {
+    text-align: center;
+  }
