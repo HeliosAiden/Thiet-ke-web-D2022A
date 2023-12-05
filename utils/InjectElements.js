@@ -1,8 +1,9 @@
+const rootURL = window.location.origin
 export const injectHTML = (id, path, images = [], style = null) => {
   const element = document.querySelector(`#${id}`);
   if (!element) return;
   try {
-    fetch(`${path}`)
+    fetch(`${rootURL}/${path}`)
       .then((res) => res.text())
       .then((data) => {
         element.innerHTML = data;
@@ -26,7 +27,7 @@ export const injectHTML = (id, path, images = [], style = null) => {
             const currentIMG = document.getElementById(`img-${index}`);
             const newIMG = document.createElement("img");
             if (currentIMG) {
-              newIMG.src = img.src;
+              newIMG.src = `${rootURL}/${img.src}`;
               newIMG.alt = img.alt;
               newIMG.style = img.style;
               newIMG.id = currentIMG.id;
@@ -38,7 +39,7 @@ export const injectHTML = (id, path, images = [], style = null) => {
         if (style !== null) {
           const newStyle = document.createElement("link");
           newStyle.rel = "stylesheet";
-          newStyle.href = style.href;
+          newStyle.href = `${rootURL}/${style.href}`;
           const oldStyle = element.querySelector("link");
           if (oldStyle) {
             element.removeChild(oldStyle);
@@ -56,7 +57,7 @@ export const injectTagHTML = ( tag, src='', style='', className='', ) => {
   if (!element) return;
   document.body.appendChild(element)
   if (src) {
-    element.src = src
+    element.src = `${rootURL}/${src}`
   }
   if (className) {
     element.className = className
