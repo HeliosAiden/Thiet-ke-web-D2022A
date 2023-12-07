@@ -1,135 +1,50 @@
 <link rel="stylesheet" href="../../style.css" />
 
-<!-- First Photo Grid-->
 <div class="main-wrapper">
-  <div class="row-padding">
-    <div class="third container margin-bottom">
-      <a href="/home/Lesson_1/excercise_1/index.html" class="link">
-        <img
-          src="public\images\Buoi_1\buoi_1_1.png"
-          alt="Lesson 1 excercise 1"
-          style="width: 100%; height: 200px; object-fit: cover"
-          class="hover-opacity"
-        />
-      </a>
-      <div class="container white" style="height: 200px; border-radius: 5px">
-        <p><b>Bài 1 - buổi 1</b></p>
-        <p>
-          Truy cập trang
-          <a href="https://www.w3schools.com/html/default.asp"
-            >https://www.w3schools.com/html/default.asp</a
-          >, đọc phần HTML Tutorial, tìm hiểu các thẻ liệt kê trong ảnh dưới đây
-          (trừ phần HTML CSS) và trình bày rõ ràng theo các ý bằng 1 file html:
-        </p>
-      </div>
-    </div>
-    <div class="third container margin-bottom">
-      <a href="/home/Lesson_2/excercise_1/index.html" class="link">
-        <img
-          src="public\images\Buoi_2\buoi_2_1.png"
-          alt="Lession 2 excercise 1"
-          style="width: 100%; height: 200px; object-fit: cover"
-          class="hover-opacity"
-        />
-      </a>
-      <div class="container white" style="height: 200px; border-radius: 5px">
-        <p><b>Bài 1 - buổi 2</b></p>
-        <p>
-          Sinh viên sử dụng visual studio code để thực hiện sử dụng file
-          TestLab1.html, thực hiện định style theo 3 kiểu inline, internal,
-          external
-        </p>
-      </div>
-    </div>
-    <div class="third container">
-      <a href="/home/Lesson_2/excercise_2/index.html" class="link">
-        <img
-          src="public\images\Buoi_2\buoi_2_2.png"
-          alt="Norway"
-          style="width: 100%; height: 200px; object-fit: cover"
-          class="hover-opacity"
-        />
-      </a>
-      <div class="container white" style="height: 200px; border-radius: 5px">
-        <p><b>Bài 2 - buổi 2</b></p>
-        <p>
-          Tạo trang web đúng mẫu theo các liên kết sau:
-          <a
-            href="https://genk.vn/40-nam-nhin-lai-windows-10-that-bai-tao-nen-thanh-cong-cho-he-dieu-hanh-pho-bien-nhat-ngay-nay-20231125095238842.chn"
-            >40 năm nhìn lại Windows 1.0: Thất bại tạo nên thành công cho hệ
-            điều hành phổ biến nhất ngày nay</a
-          >
-          và
-          <a href=""></a>
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Second Photo Grid -->
-  <div>
-    <div class="third container margin-bottom">
-      <a href="/home/Lesson_2/excercise_3/index.html" class="link">
-        <img
-          src="public\images\Buoi_2\buoi_2_3.png"
-          alt="Norway"
-          style="width: 100%; height: 200px; object-fit: cover"
-          class="hover-opacity"
-        />
-      </a>
-      <div class="container white" style="height: 200px; border-radius: 5px">
-        <p><b>Bài 3 - buổi 2</b></p>
-        <p>
-          Tạo trang web, các thẻ và CSS các thẻ tương ứng đểcó kết quả như sau
-          (3.1 -> 3.4)
-        </p>
-      </div>
-    </div>
-    <div class="third container margin-bottom">
-      <a href="/home/Lesson_2/excercise_4/index.html" class="link">
-        <img
-          src="public\images\Buoi_2\buoi_2_4.png"
-          alt="Norway"
-          style="width: 100%; height: 200px; object-fit: cover"
-          class="hover-opacity"
-        />
-      </a>
-      <div class="container white" style="height: 200px; border-radius: 5px">
-        <p><b>Bài 4 - buổi 2</b></p>
-        <p>
-          Trình bày và định dạng trang web như mẫu văn bản đính kèm (phải dùng
-          class, ID) trong đó: (làm theo yêu cầu)
-        </p>
-      </div>
-    </div>
-    <div class="third container">
-      <img
-        src="https://images.pexels.com/photos/36478/amazing-beautiful-beauty-blue.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-        alt="Norway"
-        style="width: 100%; height: 200px; object-fit: cover"
-        class="hover-opacity"
-      />
-      <div class="container white" style="height: 200px; border-radius: 5px">
-        <p><b>Lorem Ipsum</b></p>
-        <p>
-          Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum,
-          porta lectus vitae, ultricies congue gravida diam non fringilla.
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Pagination -->
-  <div class="center padding-32">
-    <div class="bar">
-      <a href="#" class="bar-item button hover-black">«</a>
-      <a href="#" class="bar-item black button">1</a>
-      <a href="#" class="bar-item button hover-black">2</a>
-      <!-- <a href="#" class="bar-item button hover-black">3</a>
-    <a href="#" class="bar-item button hover-black">4</a> -->
-      <a href="#" class="bar-item button hover-black">»</a>
-    </div>
+  <div class="row" id="homegallery">
   </div>
 </div>
 
-<style></style>
+<script type="module">
+  import { PostDatas } from './constants/posts.js'
+  const homegallery = document.getElementById('homegallery')
+
+  const createContentElement = (data, index) => {
+    //Initialize div components
+    const anchor = document.createElement('a')
+    const column = document.createElement('div')
+    const imgBox = document.createElement('div')
+    const img = document.createElement('img')
+    const title = document.createElement('h3')
+    const p = document.createElement('p')
+    const box = document.createElement('div')
+    column.className = 'col-3'
+    // create imgBox
+    imgBox.className = 'img-box';
+    anchor.href=data.url_href;
+    img.src=data.img_src;
+    img.alt='snapshot'
+    img.className='pre-img'
+    anchor.appendChild(img)
+    imgBox.appendChild(anchor)
+    //create pBox
+    const pBox = document.createElement('div');
+    pBox.className='p-box'
+    p.innerText = data.description;
+    pBox.appendChild(p);
+    title.className='post-title'
+    title.innerText = data.title
+    box.className='box'
+    box.appendChild(imgBox);
+    box.appendChild(title);
+    box.appendChild(pBox);
+    column.appendChild(box)
+    return column;
+  }
+
+  PostDatas.map((data,index) => {
+    const column = createContentElement(data)
+    homegallery.appendChild(column, index)
+
+  })
+</script>

@@ -20,7 +20,7 @@ export const HTMLElements = [
         {
           src: 'public/images/avatar_1.jpg',
           alt: 'avatar-1',
-          style: "width: 65px",
+          style: "width: 100%",
         }
       ],
     },
