@@ -55,7 +55,6 @@ export const injectHTML = (id, path, images = [], style = null) => {
 export const injectTagHTML = ( tag, src=null, style=null, className=null, link=null ) => {
   const element = document.createElement(`${tag}`);
   if (!element) return;
-  document.body.appendChild(element)
   if (src) {
     element.src = `${rootURL}/${src}`
   }
@@ -68,4 +67,5 @@ export const injectTagHTML = ( tag, src=null, style=null, className=null, link=n
   if (link) {
     element.src = link
   }
+  return element
 };

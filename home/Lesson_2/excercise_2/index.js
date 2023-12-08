@@ -4,15 +4,21 @@ const MainElements = [
   {
     tag: "iframe",
     src: "home/Lesson_2/excercise_2/bai1.html",
-    style: "width: 80%; height: 80vh; margin-left:20%;",
+    style: "width: 100%; height: 80vh;",
   },
   {
     tag: "iframe",
     src: "home/Lesson_2/excercise_2/bai2.html",
-    style: "width: 80%; height: 80vh; margin-left:20%; margin-top: 50px",
+    style: "width: 100%; height: 80vh; margin-top: 50px",
   },
 ];
 
-MainElements.map((element) =>
-  injectTagHTML(element.tag, element.src, element.style)
+const wrapper = document.createElement('div')
+wrapper.className='main-wrapper'
+document.body.appendChild(wrapper)
+
+MainElements.map((element) => {
+  const tagEl = injectTagHTML(element.tag, element.src, element.style)
+  wrapper.appendChild(tagEl)
+}
 );
