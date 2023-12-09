@@ -35,4 +35,10 @@ export const PostDatas = [
         url_href: 'home/Lesson_3/excercise_2/',
         title: 'Bài 2 buổi 3',
     },
+    {
+        img_src: 'public/images/Buoi_3/buoi_3_1.png',
+        description: 'Thiết kếtrang theo link sau: https://m3.material.io/',
+        url_href: 'home/Lesson_3/excercise_1/',
+        title: 'Bài 1 buổi 3',
+    },
 ]
