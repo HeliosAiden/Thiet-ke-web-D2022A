@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mid Term - Nguyễn Lê Nhật Anh - D2022A</title>
+    <script
+      src="https://kit.fontawesome.com/2ff95f2a89.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      /* Google Fonts */
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+      /* Global Variables */
+      :root {
+        --header-height: 3.5rem;
+        --card-padding: 1.9rem 0.95rem;
+        --border-radius: 1.25rem;
+        --box-shadow: 0px 5px 0px 0px rgba(69, 67, 96, 0.1);
+        /* Color Variables */
+        --color-white: hsl(252, 30%, 100%);
+        --color-light: hsl(252, 30%, 92%);
+        --color-gray: hsl(252, 15%, 65%);
+        --color-primary: #fcc302;
+        --color-secondary: #00bec9;
+        --color-dark: hsl(252, 30%, 17%);
+        /* Fonts and Typography */
+        --body-font: "Poppins", sans-serif;
+        /* Sizes */
+        --h1-font-size: 3.5rem;
+        --h2-font-size: 1.25rem;
+        --h3-font-size: 1rem;
+        --normal-font-size: 0.938rem;
+        --small-font-size: 0.813rem;
+        /* Weights */
+        --font-medium: 400;
+        --font-semi-bold: 600;
+        /* Margins */
+        --m-0-5: 0.5rem;
+        --m-0-75: 0.75rem;
+        --m-1: 1rem;
+        --m-1-5: 1.5rem;
+        --m-2: 2rem;
+        --m-2-5: 2.5rem;
+      }
+
+      /* Base */
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body,
+      button,
+      input,
+      textarea {
+        font-family: var(--body-font);
+        font-size: var(--normal-font-size);
+      }
+      body {
+        background-color: var(--color-light);
+        color: var(--color-dark);
+        line-height: 1.7;
+        font-weight: var(--font-medium);
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+        vertical-align: middle;
+      }
+      ul {
+        list-style-type: none;
+      }
+      a {
+        text-decoration: none;
+        color: var(--color-dark);
+      }
+      h1,
+      h2,
+      h3 {
+        font-weight: var(--font-semi-bold);
+      }
+      h1 {
+        font-size: var(--h1-font-size);
+      }
+      h2 {
+        font-size: var(--h2-font-size);
+      }
+      h3 {
+        font-size: var(--h3-font-size);
+      }
+
+      /* Layout */
+
+      .container {
+        max-width: 80%;
+        margin: 0 auto;
+      }
+      .padd-15 {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+      .light {
+        color: var(--color-white);
+      }
+      .dark {
+        color: var(--color-dark);
+      }
+      .primary {
+        color: var(--color-primary);
+      }
+
+      section {
+        max-height: 80vh;
+      }
+
+      h2.title {
+        font-size: var(--h1-font-size);
+      }
+      h3.title {
+        margin-top: 1rem;
+        font-size: 2rem;
+      }
+      p.sub {
+        padding: 2rem 0;
+        font-size: 1.25rem;
+        font-weight: 300;
+        max-width: 720px;
+        margin: auto;
+      }
+      .bg-primary {
+        background-color: var(--color-primary);
+      }
+      .bg-secondary {
+        background-color: var(--color-secondary);
+      }
+      .bg-white {
+        background-color: var(--color-white);
+      }
+
+      button {
+        padding: 12px 32px;
+        border-radius: 6px;
+        font-size: var(--h2-font-size);
+        color: var(--color-white);
+      }
+      button:hover {
+        cursor: pointer;
+        scale: 1.02;
+        transition: 0.3s;
+      }
+      button.round {
+        border-radius: 32px;
+        margin-top: 20px;
+      }
+      button.filled {
+        border: none;
+        padding: 13px 33px;
+      }
+      button.outlined {
+        border: 2px solid var(--color-white);
+        background-color: transparent;
+      }
+
+      .bg-img {
+        position: relative;
+        width: 400px;
+        height: 400px;
+        margin: 4rem auto;
+        border-radius: 2px;
+        z-index: 20;
+      }
+
+      .bg-img:hover {
+        scale: 0.99;
+        cursor: pointer;
+      }
+
+      .bg-img.dog1 {
+        background-image: url(../../../public/images/midterm/dog1.jpg);
+      }
+
+      .bg-img.dog2 {
+        background-image: url(../../../public/images/midterm/dog2.png);
+      }
+
+      .bg-img.left::after {
+        z-index: -1;
+        content: "";
+        display: inline-block;
+        width: 160px;
+        height: 120px;
+        background-color: var(--color-primary);
+        position: absolute;
+        top: 303px;
+        left: -23px;
+      }
+      .bg-img.right::after {
+        z-index: -1;
+        content: "";
+        display: inline-block;
+        width: 160px;
+        height: 120px;
+        background-color: var(--color-primary);
+        position: absolute;
+        top: 303px;
+        left: 273px;
+      }
+
+      .lgh {
+        max-height: 120vh;
+      }
+
+      /* Header */
+
+      header {
+        background-color: #daac00;
+        width: 100%;
+        height: 14vh;
+      }
+      .container.head {
+        width: 100%;
+        height: 100%;
+        padding: 2rem 0;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      /* Logo */
+      .logo-box {
+        width: fit-content;
+        display: flex;
+      }
+      .logo-icon {
+        font-size: 48px;
+        color: var(--color-white);
+      }
+      .logo-text-content {
+        padding: 0 0.875rem;
+      }
+      .logo-name {
+        font-size: var(--normal-font-size);
+        font-weight: var(--font-semi-bold);
+        text-transform: uppercase;
+        margin: 6px 0 -6px;
+      }
+      .logo-drescription {
+        font-family: var(--small-font-size);
+        font-size: var(--small-font-size);
+      }
+
+      /* Header Navigation */
+
+      .nav-bar {
+        display: flex;
+        padding: 0.5rem 0;
+        margin-top: -4px;
+      }
+      .nav-bar-item {
+        padding: 0 1.5rem;
+      }
+      .nav-bar-item > a {
+        text-transform: capitalize;
+        font-size: 24px;
+        font-weight: var(--font-medium);
+      }
+
+      /* Header Search bar */
+
+      .search-container {
+        width: 240px;
+        background-color: var(--color-primary);
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+      }
+      .search-icon {
+        align-self: center;
+        background-color: var(--color-secondary);
+        width: fit-content;
+        align-self: 4/3;
+        font-size: 18px;
+        display: inline-block;
+        padding: 13px 24px;
+      }
+      .search-field {
+        width: auto;
+        height: 100%;
+        padding: 0.5rem 1.25rem;
+      }
+      .search-field > span {
+        font-weight: 400;
+        font-size: var(--font-medium);
+      }
+      .content {
+        padding: 2rem 0;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+      }
+      .content.col {
+        flex-direction: column;
+      }
+      .content-text-box {
+        padding: 4rem 2rem;
+        line-height: 1.4;
+        max-width: 840px;
+      }
+      .content-buttons {
+        display: flex;
+      }
+      .content-buttons > button {
+        margin-right: 22px;
+      }
+      .content-buttons > button.right {
+        margin-left: auto;
+      }
+      .play-icon {
+        font-size: 56px;
+        color: var(--color-white);
+        margin: 170px;
+        padding: 8px 15px;
+        border-radius: 50%;
+        border: 3px solid var(--color-white);
+      }
+      .text-content {
+        text-align: center;
+        height: fit-content;
+      }
+      .text-content > p {
+        font-size: 0.875rem;
+        font-weight: 400;
+      }
+      .cards {
+        display: flex;
+        margin: auto;
+      }
+      .cards .card {
+        margin-right: 50px;
+        width: 280px;
+      }
+      .cards .card:last-child {
+        margin-right: 0px;
+      }
+      .img-card {
+        width: 280px;
+        border: 5px solid var(--color-white);
+      }
+      .card.text-content > h3 {
+        max-width: 200px;
+      }
+      footer {
+        background-color: var(--color-dark);
+        width: 100%;
+        height: 50vh;
+      }
+      footer > .content {
+        display: flex;
+        justify-content: space-between;
+      }
+      footer > .content > .row {
+        width: 25%;
+        margin-right: 25px;
+      }
+      footer > .content > .row:last-child {
+        width: 40%;
+        margin-right: 0px;
+      }
+      ul.ver {
+        margin-top: 1rem;
+      }
+      ul.ver > li {
+        margin: 0.5rem 0;
+      }
+      ul.ver > li > a {
+        font-size: 1.1rem;
+      }
+      .email-container {
+        margin-top: 25px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .email-field {
+        width: 100%;
+        background-color: var(--color-primary);
+        padding: 12px;
+      }
+
+      .send-icon {
+        color: var(--color-white);
+        font-size: 24px;
+        background-color: var(--color-secondary);
+        padding: 12px 22px;
+      }
+      .contacts {
+        width: 100%;
+        margin-top: 30px;
+      }
+      .contacts > i {
+        float: right;
+        margin-right: 12px;
+        font-size: 1.2rem;
+        color: var(--color-dark);
+        padding: 6px;
+        background: var(--color-light);
+        border-radius: 50%;
+      }
+
+      .contacts > i:hover {
+        scale: 1.05;
+        transition: 0.3s;
+        cursor: pointer;
+      }
+
+      .contacts > i:first-child {
+        margin-right: 0px;
+      }
+
+      .contacts > i:last-child {
+        padding: 6px 8px;
+      }
+
+      .play-icon {
+        opacity: 0;
+      }
+      .play-icon:hover {
+        opacity: 0.95;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container head">
+        <div class="logo-box">
+          <i class="fa-solid fa-paw logo-icon"></i>
+          <div class="logo-text-content">
+            <h2 class="logo-name light">thú y nhật anh</h2>
+            <p class="logo-drescription light">Số 2 không ai số 1</p>
+          </div>
+        </div>
+        <nav class="nav-bar-container">
+          <ul class="nav-bar">
+            <li class="nav-bar-item">
+              <a href="#" class="light">trang chủ</a>
+            </li>
+            <li class="nav-bar-item">
+              <a href="#" class="light">giới thiệu</a>
+            </li>
+            <li class="nav-bar-item"><a href="#" class="light">dịch vụ</a></li>
+            <li class="nav-bar-item"><a href="#" class="light">liên hệ</a></li>
+          </ul>
+        </nav>
+        <div class="search-container">
+          <div class="search-field">
+            <span class="light">Search...</span>
+          </div>
+          <i class="fa-solid fa-magnifying-glass search-icon light"></i>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="bg-primary">
+        <div class="content container">
+          <div class="content-text-box">
+            <h2 class="title light">Tôi sẽ chăm sóc cho thú cưng của bạn</h2>
+            <p class="sub light">
+              Với kinh nghiệm, kỹ thuật và tình thương của chúng tôi, thú cưng
+              của bạn sẽ được chăm sóc với dịch vụ tuyệt vời nhất. Chúng tôi cam
+              kết cung cấp môi trường an toàn và sạch sẽ, đồng thời đáp ứng mọi
+              nhu cầu cụ thể của từng thú cưng. bạn.
+            </p>
+            <div class="content-buttons">
+              <button class="light bg-secondary filled">Liên hệ</button>
+              <button class="light bg-light outlined">Dịch vụ</button>
+            </div>
+          </div>
+          <div class="imgbox">
+            <img src="../../../public/images/midterm/dog.png" alt="dog" class="content-img" />
+          </div>
+        </div>
+      </section>
+      <section class="bg-white">
+        <div class="content container">
+          <div class="content-text-box">
+            <h2 class="title dark">Dịch vụ của chúng tôi rất tuyệt vời</h2>
+            <p class="sub dark">
+              Với sự tận tâm và chất lượng hàng đầu, dịch vụ của chúng tôi mang
+              đến trải nghiệm tuyệt vời, đảm bảo khách hàng hài lòng và tin
+              tưởng. Chúng tôi cam kết đáp ứng mọi nhu cầu với sự chuyên nghiệp
+              và sự quan tâm đặc biệt.
+            </p>
+            <div class="content-buttons">
+              <button class="light bg-primary filled">Dịch vụ</button>
+            </div>
+          </div>
+          <div class="imgbox">
+            <div class="bg-img dog1 left">
+              <i class="fa-solid fa-play play-icon"></i>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="bg-primary lgh">
+        <div class="content container col">
+          <div class="text-content">
+            <h2 class="title light">Dịch vụ của chúng tôi</h2>
+            <p class="sub light">
+              Chúng tôi cung cấp đầy đủ dịch vụ cho thú cưng của bạn. Thú cưng
+              của bạn sẽ được chăm sóc từ A-Z và hưởng những dịch vụ tuyệt vời
+              nhất
+            </p>
+          </div>
+          <div class="cards">
+            <div class="card">
+              <img
+                src="../../../public/images/midterm/services1.jpg"
+                alt="service1"
+                class="img-card"
+              />
+              <div class="text-content">
+                <h3 class="title light">Thú y</h3>
+                <p class="light">
+                  Với đội ngũ bác sĩ thú y chuyên nghiệp và trang thiết bị y tế
+                  hiện đại, dịch vụ thú y của chúng tôi cam kết đảm bảo sức khỏe
+                  và hạnh phúc tối ưu cho thú cưng của bạn.
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <img
+                src="../../../public/images/midterm/services.jpg"
+                alt="service2"
+                class="img-card"
+              />
+              <div class="text-content">
+                <h3 class="title light">Vắc xin</h3>
+                <p class="light">
+                  Với lịch trình vắc xin đa dạng và chăm sóc tận tâm từ đội ngũ
+                  chuyên gia, chúng tôi cam kết giữ cho bản đồ sức khỏe của thú
+                  cưng luôn ổn định và mạnh mẽ.
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <img
+                src="../../../public/images/midterm/services3.jpg"
+                alt="service3"
+                class="img-card"
+              />
+              <div class="text-content">
+                <h3 class="title light">Tắm rửa</h3>
+                <p class="light">
+                  Với sản phẩm chăm sóc chất lượng cao và quan tâm đặc biệt từ
+                  đội ngũ chuyên gia, chúng tôi hứa đem lại cho thú cưng của bạn
+                  vẻ ngoài sạch sẽ và dễ chịu.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="bg-white">
+        <div class="content container">
+          <div class="imgbox">
+            <div class="bg-img dog2 right">
+              <i class="fa-solid fa-play play-icon"></i>
+            </div>
+          </div>
+          <div class="content-text-box">
+            <h2 class="title dark">Chúng tôi rất yêu thương động vật</h2>
+            <p class="sub dark">
+              Với sự tận tâm và chất lượng hàng đầu, dịch vụ của chúng tôi mang
+              đến trải nghiệm tuyệt vời, đảm bảo khách hàng hài lòng và tin
+              tưởng. Chúng tôi cam kết đáp ứng mọi nhu cầu với sự chuyên nghiệp
+              và sự quan tâm đặc biệt.
+            </p>
+            <div class="content-buttons">
+              <button class="light bg-primary filled right">Dịch vụ</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="bg-primary lgh">
+        <div class="content container col">
+          <div class="text-content">
+            <h2 class="title light">Các khách hàng của chúng tôi</h2>
+            <p class="sub light">
+              Chúng tôi cung cấp đầy đủ dịch vụ cho thú cưng của bạn. Thú cưng
+              của bạn sẽ được chăm sóc từ A-Z và hưởng những dịch vụ tuyệt vời
+              nhất
+            </p>
+          </div>
+          <div class="cards">
+            <div class="card">
+              <img src="../../../public/images/midterm/dog3.jpg" alt="service1" class="img-card" />
+              <div class="text-content">
+                <h3 class="title light"><s>$50</s> $30</h3>
+                <button class="round bg-secondary filled">Buy now</button>
+              </div>
+            </div>
+            <div class="card">
+              <img src="../../../public/images/midterm/dog4.jpg" alt="service2" class="img-card" />
+              <div class="text-content">
+                <h3 class="title light"><s>$40</s> $25</h3>
+                <button class="round bg-secondary filled">Buy now</button>
+              </div>
+            </div>
+            <div class="card">
+              <img src="../../../public/images/midterm/dog5.jpg" alt="service3" class="img-card" />
+              <div class="text-content">
+                <h3 class="title light"><s>$45</s> $20</h3>
+                <button class="round bg-secondary filled">Buy now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="container"></section>
+      <section class="container"></section>
+      <section class="container"></section>
+    </main>
+    <footer>
+      <div class="content container">
+        <div class="row">
+          <h3 class="title light">Giới thiệu</h3>
+          <ul class="ver">
+            <li><a class="light" href="#">Lịch sử</a></li>
+            <li><a class="light" href="#">Đội ngũ của chúng tôi</a></li>
+            <li><a class="light" href="#">Thương hiệu</a></li>
+            <li><a class="light" href="#">Điều khoản</a></li>
+            <li><a class="light" href="#">Bảo mật</a></li>
+          </ul>
+        </div>
+        <div class="row">
+          <h3 class="title light">Dịch vụ</h3>
+          <ul class="ver">
+            <li><a class="light" href="#">Hướng dẫn</a></li>
+            <li><a class="light" href="#">Sản phẩm</a></li>
+            <li><a class="light" href="#">Đơn hàng</a></li>
+            <li><a class="light" href="#">Khuyến mãi</a></li>
+            <li><a class="light" href="#">Thanh toán</a></li>
+          </ul>
+        </div>
+        <div class="row">
+          <h3 class="title light">Hãy gửi mail cho tôi</h3>
+          <div class="email-container">
+            <div class="email-field">
+              <span class="light">Email...</span>
+            </div>
+            <i class="fa-solid fa-paper-plane send-icon"></i>
+          </div>
+          <div class="contacts">
+            <i class="fa-brands fa-viber"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
