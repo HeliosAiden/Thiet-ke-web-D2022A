@@ -41,4 +41,28 @@ export const PostDatas = [
         url_href: 'home/Lesson_4/mid_term/',
         title: 'Kiểm tra 30%',
     },
+    {
+        img_src: 'public/images/Buoi_4/bai_1.png',
+        description: 'Bài 1 buổi 4',
+        url_href: 'home/Lesson_4/excercise_1/',
+        title: 'Kiểm tra 30%',
+    },
+    {
+        img_src: 'public/images/Buoi_4/bai_2.png',
+        description: 'Bài 2 buổi 4',
+        url_href: 'home/Lesson_4/excercise_2/',
+        title: 'Bài 2 buổi 4',
+    },
+    {
+        img_src: 'public/images/Buoi_4/bai_3.png',
+        description: 'Bài 1 buổi 4',
+        url_href: 'home/Lesson_4/excercise_3/',
+        title: 'Bài 3 buổi 4',
+    },
+    {
+        img_src: 'public/images/Buoi_4/bai_4.png',
+        description: 'Bài 4 buổi 4',
+        url_href: 'home/Lesson_4/excercise_4/',
+        title: 'Bài 4 buổi 4',
+    },
 ]
