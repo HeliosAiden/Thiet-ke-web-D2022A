@@ -65,4 +65,22 @@ export const PostDatas = [
         url_href: 'home/Lesson_4/excercise_4/',
         title: 'Bài 4 buổi 4',
     },
+    {
+        img_src: 'https://images.pexels.com/photos/167682/pexels-photo-167682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        description: 'Bài 1 buổi 5',
+        url_href: 'home/Lesson_5/excercise_1/',
+        title: 'Bài 1 buổi 5',
+    },
+    {
+        img_src: 'https://images.pexels.com/photos/167682/pexels-photo-167682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        description: 'Bài 2 buổi 5',
+        url_href: 'home/Lesson_5/excercise_2/',
+        title: 'Bài 2 buổi 5',
+    },
+    {
+        img_src: 'https://images.pexels.com/photos/167682/pexels-photo-167682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        description: 'Bài 3 buổi 5',
+        url_href: 'home/Lesson_5/excercise_3/',
+        title: 'Bài 3 buổi 5',
+    },
 ]
